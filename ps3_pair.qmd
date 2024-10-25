@@ -17,7 +17,7 @@ include-before-body:
       breaklines
     }
 ---
-Partner1: 
+Partner1: Andrew White, THEANDREW20K
 Partner2: Mohamed Mohamed, Moham22-Star
 ---
 
@@ -29,16 +29,25 @@ import altair as alt
 np.random.seed(42)
 data = pd.DataFrame(np.random.rand(100), columns=['Random Numbers'])
 
+def describe_function(data): # DataFrame head
+    head_data = data.head()
+    describe_data = data.describe() # DataFrame description
+    
+    return [head_data, describe_data]
 
-def preview_data(df):
-  df_list = []
-  altair_plot = alt.Chart(df).mark_bar().encode(
-    alt.X(df.index),
-    alt.Y(df["Random Numbers"])
+
+def preview_data(data):
+  data_list = []
+  altair_plot = alt.Chart(data).mark_bar().encode(
+    alt.X(data.index),
+    alt.Y(data["Random Numbers"])
   )
-  df_list.append(df.head)
-  df_list.append(altair_plot)
-  return df_list
+  data_list.append(df.head)
+  data_list.append(altair_plot)
+  data.list.append(describe_data(df))
+  return data_list
 	
 preview_data(data)
 ```
+
+
