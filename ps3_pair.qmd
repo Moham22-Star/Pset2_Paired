@@ -38,9 +38,9 @@ preview_data(data)
 ```
 
 ```{python}
-def describe_function(data):
+def describe_function(data): # DataFrame head
     head_data = data.head()
-    describe_data = data.describe()
+    describe_data = data.describe() # DataFrame description
     
     return [head_data, describe_data]
 ```
