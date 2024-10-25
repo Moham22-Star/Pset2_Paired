@@ -29,7 +29,7 @@ import altair as alt
 np.random.seed(42)
 data = pd.DataFrame(np.random.rand(100), columns=['Random Numbers'])
 
- 
+
 def preview_data(df):
   df_list = []
   altair_plot = alt.Chart(df).mark_bar().encode(
