@@ -31,23 +31,20 @@ data = pd.DataFrame(np.random.rand(100), columns=['Random Numbers'])
 
 def describe_function(data): # DataFrame head
     head_data = data.head()
-    describe_data = data.describe() # DataFrame description
-    
-    return [head_data, describe_data]
 
+    altair_plot = alt.Chart(data).mark_bar().encode(
+        x=alt.X('Random Numbers', bin=True),
+        y='count()'
+    ).properties(
+        title='Random Numbers'
+    )
+    return [head_data, altair_plot]
 
-def preview_data(data):
-  data_list = []
-  altair_plot = alt.Chart(data).mark_bar().encode(
-    alt.X(data.index),
-    alt.Y(data["Random Numbers"])
-  )
-  data_list.append(df.head)
-  data_list.append(altair_plot)
-  data.list.append(describe_data(df))
-  return data_list
-	
-preview_data(data)
+result = describe_function(data)
+
+print("Random Numbers:\n", result[0])
+
+result[1].display()
 ```
 
 
