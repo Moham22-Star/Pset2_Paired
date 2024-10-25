@@ -1,6 +1,10 @@
 ---
 title: "30538 Problem Set 3: git pair"
+<<<<<<< merge_conflict_name_2
 author: "Mohamed Mohamed"
+=======
+author: "Andrew White"
+>>>>>>> merge_conflict_name_1
 format: 
   pdf:
     include-in-header: 
