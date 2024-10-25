@@ -36,3 +36,12 @@ def preview_data(df):
 
 preview_data(data)
 ```
+
+```{python}
+def describe_function(data):
+    head_data = data.head()  # First object: Head of the DataFrame
+    describe_data = data.describe()  # Second object: Description of the DataFrame
+    
+    return [head_data, describe_data]  # Return both as a list
+```
+
